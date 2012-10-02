@@ -23,5 +23,9 @@ CLOSED: [2012-10-01 lun. 19:59]
 CLOSED: [2012-10-02 mar. 18:52]
 * DONE Extract the namespace into a separate project
 CLOSED: [2012-10-02 mar. 18:52]
+* DONE Explain how to setup the project
+CLOSED: [2012-10-02 mar. 19:00]
+* TODO Give an example of output
 * TODO Refactor some existing functions
 * TODO Split into multiple namespaces the utility functions
+* TODO Extract the existing samples into the test namespace.
