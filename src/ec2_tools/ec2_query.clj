@@ -47,19 +47,12 @@
   [] (->> (time/now)
           (format/unparse (format/formatters :date-time-no-ms))))
 
-(defn- split-parameters
-  "Split an existing partial query parameters into chunks."
-  [s]
-  (map #(s/split % #"=") (s/split s #"&")))
-
-#_(split-parameters "Action=toto&Region=1&Region=2&language=fr")
-
-(defn- split-merge-url
-  "Split and url encode the partial query parameters and the rest."
+(defn- complete-url
+  "Complete the initial url with the needed remaining ones."
   [partial-url & other-params]
-  (apply conj (split-parameters partial-url) other-params))
+  (apply conj partial-url other-params))
 
-#_(split-merge-url "Action=toto&Region=1&Region=2&langua:ge=fr" ["abc;sklfj" "def;lsdfk"] ["1" "2"])
+#_(complete-url {"Action" "toto", "Region" "2", "langua:ge" "fr"} ["abc;sklfj" "def;lsdfk"] ["1" "2"])
 
 (defn- key-pair-url-encode
   "Url encode the key value pair and join them with the '='."
@@ -70,18 +63,18 @@
 
 (defn- get-query-parameters
   "The parameters needed to sign the full query."
-  [action]
-  (->> (split-merge-url action
-                        ["Version"          "2012-08-15"]
-                        ["AWSAccessKeyId"   aws-access-key-id]
-                        ["Timestamp"        (now-in-ec2-format)]
-                        ["SignatureVersion" "2"]
-                        ["SignatureMethod"  "HmacSHA256"])
+  [params]
+  (->> (complete-url params
+                     ["Version"          "2012-08-15"]
+                     ["AWSAccessKeyId"   aws-access-key-id]
+                     ["Timestamp"        (now-in-ec2-format)]
+                     ["SignatureVersion" "2"]
+                     ["SignatureMethod"  "HmacSHA256"])
        sort
        (map key-pair-url-encode)
        (s/join \&)))
 
-#_(get-query-parameters "Action=toto&Region=1&Region=2&langua:ge=fr")
+#_(get-query-parameters {"Action" "toto", "Region" "2", "langua:ge" "fr"})
 
 (defn- ec2-sign
   "Compute the Signature field to add to the query parameters."
@@ -105,25 +98,21 @@
                HTTPRequestURI + \n +
                CanonicalizedQueryString <from the preceding step>"
   [params]
-  ((log-dec ec2-sign)
+  (ec2-sign
    (s/join "\n" ["GET" ec2-host "/" params])))
 
 (defn- compute-url-parameters
   "The authentication for the ec2 api."
   [action]
   (let [params (get-query-parameters action)]
-    (s/join
-     \&
-     [params
-      (str "Signature=" (ec2-sign-params params))])))
+    (format "%s&Signature=%s" params (ec2-sign-params params))))
 
 (defn amazon-query
   "Querying amazon's account"
-  [method mpath & [opts]]
-  (let [path (s/join \& (map #(s/join \= %) mpath))]
-    ((log-dec c/request)
-     (merge {:method     method
-             :url        (str url \? (compute-url-parameters path))
-             :accept     :xml
-             :as         :xml}
-            opts))))
+  [method path & [opts]]
+  ((log-dec c/request)
+   (merge {:method     method
+           :url        (str url \? (compute-url-parameters path))
+           :accept     :xml
+           :as         :xml}
+          opts)))
