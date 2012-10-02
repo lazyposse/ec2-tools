@@ -7,17 +7,18 @@
 (defn ls-region
   "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeRegions.html"
   [region]
-  (q/amazon-query :get (str "Action=DescribeRegions&RegionName.1=" region)))
+  (q/amazon-query :get {"Action" "DescribeRegions"
+                        "RegionName.1" region}))
 
 (defn ls-regions
   "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeRegions.html"
   []
-  (q/amazon-query :get "Action=DescribeRegions"))
+  (q/amazon-query :get {"Action" "DescribeRegions"}))
 
 (defn ls-instances
   "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeInstances.html"
   []
-  (q/amazon-query :get "Action=DescribeInstances"))
+  (q/amazon-query :get {"Action" "DescribeInstances"}))
 
 (comment
   (def regions (ls-regions))

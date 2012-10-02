@@ -119,9 +119,11 @@
 
 (defn amazon-query
   "Querying amazon's account"
-  [method path & [opts]] ((log-dec c/request)
-                          (merge {:method     method
-                                  :url        (str url \? (compute-url-parameters path))
-                                  :accept     :xml
-                                  :as         :xml}
-                                 opts)))
+  [method mpath & [opts]]
+  (let [path (s/join \& (map #(s/join \= %) mpath))]
+    ((log-dec c/request)
+     (merge {:method     method
+             :url        (str url \? (compute-url-parameters path))
+             :accept     :xml
+             :as         :xml}
+            opts))))

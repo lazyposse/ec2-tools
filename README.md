@@ -50,10 +50,17 @@ nil
 If you want some missing functions, you have the *amazon-query* primary function:
 
 ```clj
-(amazon-query :get "Action=DescribeRegions")
+(amazon-query :get {"Action" "DescribeRegions"})
 ```
 
 This is the same query as before so the result is the same too.
+You can add the wanted other params as a new entry in the map.
+
+```clj
+(amazon-query :get {"Action"       "DescribeRegions"
+                    "RegionName.1" "us-east-1"})
+```
+
 The sky is the limit here.
 
 ## License

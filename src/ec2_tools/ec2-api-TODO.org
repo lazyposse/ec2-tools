@@ -1,3 +1,4 @@
+
 #+title: API EC2
 #+author: Antoine R. Dumont
 
@@ -33,6 +34,9 @@ CLOSED: [2012-10-02 mar. 19:37]
 CLOSED: [2012-10-02 mar. 20:52]
 * DONE Function to list instances
 CLOSED: [2012-10-02 mar. 20:52]
+* DONE Improve the input of the query-amazon (as a map instead of a string for example)
+CLOSED: [2012-10-02 mar. 21:27]
+Thus we do not limit the existing possibility of the amazon api.
 * TODO Refactor some existing functions
 * TODO Extract the existing code samples from the ec2-query namespace and create the equivalent tests
 * TODO Add some more functions (describe region, describe instances, describe instance, etc...)
