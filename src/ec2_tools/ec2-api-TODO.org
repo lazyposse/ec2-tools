@@ -25,7 +25,8 @@ CLOSED: [2012-10-02 mar. 18:52]
 CLOSED: [2012-10-02 mar. 18:52]
 * DONE Explain how to setup the project
 CLOSED: [2012-10-02 mar. 19:00]
-* TODO Give an example of output
+* DONE Split the multiple functions into namespaces
+CLOSED: [2012-10-02 mar. 19:16]
+* TODO Give an example of output that returns the example on the README
 * TODO Refactor some existing functions
-* TODO Split into multiple namespaces the utility functions
-* TODO Extract the existing samples into the test namespace.
+* TODO Extract the existing samples into the test namespace
