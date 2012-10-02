@@ -7,8 +7,8 @@
              {:dependencies
               [[midje "1.4.0"]
                [table "0.3.1" :exclusions [com.datomic/datomic]]]}}
-  :dependencies [[org.clojure/clojure "1.4.0"]
-                 [clj-http                              "0.4.0"]
-                 [clj-time                              "0.4.4"]
-                 [org.clojure/data.codec                "0.1.0"]
-                 [digest                                "1.3.0"]])
+  :dependencies [[org.clojure/clojure    "1.4.0"]
+                 [clj-http               "0.4.0"]
+                 [clj-time               "0.4.4"]
+                 [org.clojure/data.codec "0.1.0"]
+                 [digest                 "1.3.0"]])
