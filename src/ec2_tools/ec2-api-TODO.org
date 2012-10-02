@@ -27,6 +27,9 @@ CLOSED: [2012-10-02 mar. 18:52]
 CLOSED: [2012-10-02 mar. 19:00]
 * DONE Split the multiple functions into namespaces
 CLOSED: [2012-10-02 mar. 19:16]
-* TODO Give an example of output that returns the example on the README
+* DONE More detailled example on the README + the output part.
+CLOSED: [2012-10-02 mar. 19:37]
 * TODO Refactor some existing functions
-* TODO Extract the existing samples into the test namespace
+* TODO Extract the existing code samples from the ec2-query namespace and create the equivalent tests
+* TODO Add some more functions (describe region, describe instances, describe instance, etc...)
+* TODO Improve the reading of the result (parse the xml into a more readable and clojure data structure)
