@@ -1,0 +1,27 @@
+#+title: API EC2
+#+author: Antoine R. Dumont
+
+* DONE Setup
+CLOSED: [2012-10-01 lun. 00:08]
+* DONE Find the documentation
+CLOSED: [2012-10-01 lun. 00:10]
+- http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using-query-api.html
+- http://nakkaya.com/2012/08/13/google-hotp-totp-two-factor-authentication-for-clojure/
+- http://www.codeproject.com/Articles/175025/Create-URL-for-an-Authenticated-Amazon-EC2-API-Req
+* DONE Make the api work
+CLOSED: [2012-10-01 lun. 00:10]
+The problems were multiple:
+- bad signature
+- no signature really (oops!)
+- duplicated entry in the fiels to sign
+- missing /
+* DONE Externalize credentials (oops again!)
+CLOSED: [2012-10-01 lun. 19:57]
+* DONE Try another function (describe a region for example)
+CLOSED: [2012-10-01 lun. 19:59]
+* DONE Use the xml as the accept flux
+CLOSED: [2012-10-02 mar. 18:52]
+* DONE Extract the namespace into a separate project
+CLOSED: [2012-10-02 mar. 18:52]
+* TODO Refactor some existing functions
+* TODO Split into multiple namespaces the utility functions
