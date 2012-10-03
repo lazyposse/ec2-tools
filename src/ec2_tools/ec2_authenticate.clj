@@ -48,11 +48,11 @@
   "The parameters needed to sign the full query."
   [params]
   (->> (complete-url params
-                     ["Version"          "2012-08-15"]
-                     ["AWSAccessKeyId"   aws-access-key-id]
-                     ["Timestamp"        (now-in-ec2-format)]
-                     ["SignatureVersion" "2"]
-                     ["SignatureMethod"  "HmacSHA256"])
+                     {"Version"          "2012-08-15"
+                      "AWSAccessKeyId"   aws-access-key-id
+                      "Timestamp"        (now-in-ec2-format)
+                      "SignatureVersion" "2"
+                      "SignatureMethod"  "HmacSHA256"})
        sort
        (map key-pair-url-encode)
        (s/join \&)))
