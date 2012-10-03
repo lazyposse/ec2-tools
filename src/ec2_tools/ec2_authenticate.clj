@@ -35,14 +35,10 @@
   [partial-url & other-params]
   (apply conj partial-url other-params))
 
-#_(complete-url {"Action" "toto", "Region" "2", "langua:ge" "fr"} ["abc;sklfj" "def;lsdfk"] ["1" "2"])
-
-(defn- key-pair-url-encode
+(defn key-pair-url-encode
   "Url encode the key value pair and join them with the '='."
   [[k v :as kv]]
   (s/join \= (map url-encode kv)))
-
-#_(map key-pair-url-encode [["Action" "toto"] ["Region+skfj" "1"] ["language" "fr:sdfsd"] ["Reg;ion" "2"]])
 
 (defn get-query-parameters
   "The parameters needed to sign the full query."
@@ -57,8 +53,6 @@
        (map key-pair-url-encode)
        (s/join \&)))
 
-#_(get-query-parameters {"Action" "toto", "Region" "2", "langua:ge" "fr"})
-
 (defn ec2-sign
   "Compute the Signature field to add to the query parameters."
   [params]
@@ -71,8 +65,6 @@
          (b64/encode)   ;; encode in base64
          (String.)
          (url-encode))))
-
-#_(ec2-sign "Action=toto&Region=1&Region=2&langua:ge=fr")
 
 (defn ec2-sign-params
   "This is the function that will create the string to sign the ec2 way:
