@@ -55,4 +55,7 @@ CLOSED: [2012-10-03 mer. 19:18]
 * DONE Extract the existing code samples from the ec2-query namespace and create the equivalent tests
 CLOSED: [2012-10-03 mer. 19:38]
 * TODO Add some more functions (describe region, describe instances, describe instance, etc...)
+** TODO describe region
+** TODO describe instances
+** TODO describe instance
 * TODO Improve the reading of the result (parse the xml into a more readable and clojure data structure)
