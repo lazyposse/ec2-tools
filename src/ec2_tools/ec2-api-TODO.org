@@ -1,4 +1,3 @@
-
 #+title: API EC2
 #+author: Antoine R. Dumont
 
@@ -49,6 +48,8 @@ CLOSED: [2012-10-02 mar. 21:46]
 CLOSED: [2012-10-02 mar. 21:46]
 ** DONE compute-url-parameters
 CLOSED: [2012-10-02 mar. 21:50]
+* DONE Extract authenticate tokens namespace
+CLOSED: [2012-10-03 mer. 19:14]
 * TODO Extract the existing code samples from the ec2-query namespace and create the equivalent tests
 * TODO Add some more functions (describe region, describe instances, describe instance, etc...)
 * TODO Improve the reading of the result (parse the xml into a more readable and clojure data structure)
