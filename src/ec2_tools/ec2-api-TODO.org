@@ -1,0 +1,61 @@
+#+title: API EC2
+#+author: Antoine R. Dumont
+
+* DONE Setup
+CLOSED: [2012-10-01 lun. 00:08]
+* DONE Find the documentation
+CLOSED: [2012-10-01 lun. 00:10]
+- http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using-query-api.html
+- http://nakkaya.com/2012/08/13/google-hotp-totp-two-factor-authentication-for-clojure/
+- http://www.codeproject.com/Articles/175025/Create-URL-for-an-Authenticated-Amazon-EC2-API-Req
+* DONE Make the api work
+CLOSED: [2012-10-01 lun. 00:10]
+The problems were multiple:
+- bad signature
+- no signature really (oops!)
+- duplicated entry in the fiels to sign
+- missing /
+* DONE Externalize credentials (oops again!)
+CLOSED: [2012-10-01 lun. 19:57]
+* DONE Try another function (describe a region for example)
+CLOSED: [2012-10-01 lun. 19:59]
+* DONE Use the xml as the accept flux
+CLOSED: [2012-10-02 mar. 18:52]
+* DONE Extract the namespace into a separate project
+CLOSED: [2012-10-02 mar. 18:52]
+* DONE Explain how to setup the project
+CLOSED: [2012-10-02 mar. 19:00]
+* DONE Split the multiple functions into namespaces
+CLOSED: [2012-10-02 mar. 19:16]
+* DONE More detailled example on the README + the output part.
+CLOSED: [2012-10-02 mar. 19:37]
+* DONE Update docstring
+CLOSED: [2012-10-02 mar. 20:52]
+* DONE Function to list instances
+CLOSED: [2012-10-02 mar. 20:52]
+* DONE Improve the input of the query-amazon (as a map instead of a string for example)
+CLOSED: [2012-10-02 mar. 21:27]
+Thus we do not limit the existing possibility of the amazon api.
+* DONE Refactor some existing functions [100%]
+CLOSED: [2012-10-02 mar. 21:50]
+** DONE amazon-query
+CLOSED: [2012-10-02 mar. 21:44]
+** DONE split-merge-url -> compute-url
+CLOSED: [2012-10-02 mar. 21:45]
+** DONE get-query-parameters
+CLOSED: [2012-10-02 mar. 21:46]
+** DONE split-parameters destroyed as no more needed
+CLOSED: [2012-10-02 mar. 21:46]
+** DONE compute-url-parameters
+CLOSED: [2012-10-02 mar. 21:50]
+* DONE Extract authenticate tokens namespace
+CLOSED: [2012-10-03 mer. 19:14]
+* DONE Cleanup some useless functions
+CLOSED: [2012-10-03 mer. 19:18]
+* DONE Extract the existing code samples from the ec2-query namespace and create the equivalent tests
+CLOSED: [2012-10-03 mer. 19:38]
+* TODO Add some more functions (describe region, describe instances, describe instance, etc...)
+** TODO describe region
+** TODO describe instances
+** TODO describe instance
+* TODO Improve the reading of the result (parse the xml into a more readable and clojure data structure)
