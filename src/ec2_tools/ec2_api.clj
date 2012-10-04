@@ -7,8 +7,8 @@
 
 ;; ############### HOOK SETUP CALL
 
-(h/load-hook)
-#_ (h/unload-hook)
+(h/load-hook [#'q/amazon-query])
+#_ (h/unload-hook [#'q/amazon-query])
 
 ;; ############### HIGH LEVEL FUNCTIONS TO QUERY EC2
 

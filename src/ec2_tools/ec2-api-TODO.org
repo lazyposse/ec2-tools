@@ -60,6 +60,8 @@ CLOSED: [2012-10-04 jeu. 08:11]
 CLOSED: [2012-10-04 jeu. 08:19]
 * DONE Separate the concerns between the ec2-query and the hook managing.
 CLOSED: [2012-10-04 jeu. 08:27]
+* DONE Improve the hook mechnism
+CLOSED: [2012-10-04 jeu. 18:59]
 * TODO Add some more functions (describe region, describe instances, describe instance, etc...)
 ** TODO describe region
 ** TODO describe instances
