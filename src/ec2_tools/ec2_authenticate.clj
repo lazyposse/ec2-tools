@@ -4,6 +4,8 @@
             [clojure.data.codec.base64 :as b64   ]
             [clj-time.format           :as format]))
 
+;; ################### CREDENTIALS SETUP
+
 ;; first load credentials (read a map inside the ~/.ec2-config/config.clj file)
 ;; here is an example of such a map (do respect the name):
 ;; (def aws-ec2-credentials {:aws-access-key-id    "your-public-access-key
@@ -17,6 +19,16 @@
 (def ^{:private true
        :doc "The ec2 host"}
   aws-secret-access-key (:aws-secret-access-key aws-ec2-credentials))
+
+;; ################### SERVER SETUP
+
+(def ^{:private true
+       :doc "The ec2 host"}
+  ec2-host "ec2.amazonaws.com")
+
+(def ^{:private true
+       :doc "The main access to the ec2 web services."}
+  url (str "https://" ec2-host))
 
 ;; ####################### FUNCTIONS
 
@@ -81,3 +93,7 @@
   [action]
   (let [params (get-query-parameters action)]
     (format "%s&Signature=%s" params (ec2-sign-params params))))
+
+(defn compute-url
+  [params]
+  (str url \? (compute-url-parameters params)))

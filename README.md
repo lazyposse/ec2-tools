@@ -1,7 +1,7 @@
 # ec2-tools
 
-A Clojure library designed to help in admin your ec2 account and only those.
-Extract data, create nodes or else. This part is up to you.
+This lib takes care of the authentication to your ec2 account.
+Once done you can implement the missing functions.
 
 ## Setup
 
@@ -65,6 +65,6 @@ The sky is the limit here.
 
 ## License
 
-Copyright © 2012 commiters
+Copyright © 2012 ec2-tools commiters
 
 Distributed under the Eclipse Public License, the same as Clojure.

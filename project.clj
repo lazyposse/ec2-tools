@@ -11,4 +11,4 @@
                  [clj-http               "0.4.0"]
                  [clj-time               "0.4.4"]
                  [org.clojure/data.codec "0.1.0"]
-                 [digest                 "1.3.0"]])
+		 [robert/hooke           "1.1.2"]])
