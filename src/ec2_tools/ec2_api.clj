@@ -1,8 +1,16 @@
 (ns ec2-tools.ec2-api
   "The main entry to query your amazon account"
   (:require [ec2-tools.ec2-query :as q]
+            [ec2-tools.hook      :as h]
             [clojure.xml         :as x]
             [clojure.zip         :as z]))
+
+;; ############### HOOK SETUP CALL
+
+(h/load-hook)
+#_ (h/unload-hook)
+
+;; ############### HIGH LEVEL FUNCTIONS TO QUERY EC2
 
 (defn ls-region
   "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeRegions.html"

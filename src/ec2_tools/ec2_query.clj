@@ -13,4 +13,3 @@
            :as         :xml}
           opts)))
 
-(rh/add-hook #'amazon-query #'h/log-hook)
