@@ -56,7 +56,8 @@ CLOSED: [2012-10-03 mer. 19:18]
 CLOSED: [2012-10-03 mer. 19:38]
 * DONE Replace the ec2-query/log-dec decorator function by a robert-hooke/hook
 CLOSED: [2012-10-04 jeu. 08:11]
-* TODO Fix the setup inside the ec2-tools/ec2-query namespace
+* DONE Fix the setup inside the ec2-tools/ec2-query namespace
+CLOSED: [2012-10-04 jeu. 08:19]
 * TODO Add some more functions (describe region, describe instances, describe instance, etc...)
 ** TODO describe region
 ** TODO describe instances
