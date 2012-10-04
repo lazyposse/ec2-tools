@@ -1,5 +1,5 @@
 #+title: API EC2
-#+author: Antoine R. Dumont
+#+author: Denis Labaye, Antoine R. Dumont
 
 * DONE Setup
 CLOSED: [2012-10-01 lun. 00:08]
